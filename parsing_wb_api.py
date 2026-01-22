@@ -68,7 +68,7 @@ def get_product_info(sku):
     for basket in lst_basket:
         url = f"https://{basket}/vol{vol_part}/part{part}/{sku}/info/ru/card.json"
         try:
-            response = requests.get(url, timeout=10)
+            response = requests.get(url)
             if response.status_code == 200:
                 return response.json()
             
